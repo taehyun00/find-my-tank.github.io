@@ -4,18 +4,20 @@ window.navigateTo = navigateTo;
 window.renderCurrentRoute = renderCurrentRoute;
 
 document.addEventListener('DOMContentLoaded', () => {
-    const startButton = document.getElementById('startButton');
+    window.addEventListener('popstate', router);
     
-    if (startButton) {
-        startButton.addEventListener('click', () => {
-            navigateTo('/quiz'); 
-        });
-        
+    // 현재 경로가 루트가 아닐 경우에만 router를 실행하여 
+    // 딥 링크(예: /quiz)로 바로 접속하는 경우를 처리합니다.
+    if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+        router();
     }
     
-    window.addEventListener('popstate', router);
-
-    if (window.location.pathname !== '/') {
-        router();
+    // startButton 이벤트 리스너는 이제 router.js가 아닌 script.js에서 직접 처리합니다.
+    const startButton = document.getElementById('startButton');
+    if (startButton) {
+        startButton.addEventListener('click', (e) => {
+            e.preventDefault(); // 기본 동작 방지
+            navigateTo('/quiz'); 
+        });
     }
 });
