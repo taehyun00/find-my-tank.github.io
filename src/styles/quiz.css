@@ -1,3 +1,16 @@
+.quiz-screen {
+    max-width: 513px;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding: 20vh 40px 12vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 120px;
+}
+
 .quiz-card__question {
     color: var(--color-text);
     text-align: center;

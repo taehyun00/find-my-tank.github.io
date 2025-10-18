@@ -5,8 +5,8 @@ export const quizDimensions = [
             {
                 question: '당신은 축구를 합니다.<br>수비를 하실겁니까? 공격을 하실겁니까?',
                 options: [
-                    { text: 'A: 수비', score: -1 }, 
-                    { text: 'B: 공격', score: 1 }
+                    { text: '수비', score: -1 }, 
+                    { text: '공격', score: 1 }
                 ]
             }
         ] 
@@ -16,10 +16,10 @@ export const quizDimensions = [
         id: 'BH', title: '대격돌/보조 성향', 
         questions: [
             {
-                question: '불쌍한 친구 2명이 싸우고 있습니다.<br>언쟁에 끼어들어 1 vs 1 vs 1 구조를 가져갑니까?<br>한 명을 도와 2 vs 1 구조를 가져갑니까?',
+                question: '불쌍한 친구 2명이 싸우고 있습니다.<br>언쟁에 껴들어 1ㄷ1ㄷ1 구조를 가져갑니까?<br>한 명을 도와 2ㄷ1 구조를 가져갑니까?',
                 options: [
-                    { text: 'A: 1 vs 1 vs 1 만들기', score: 1 }, 
-                    { text: 'B: 2 vs 1 만들기', score: -1 }
+                    { text: '1ㄷ1ㄷ1 만들기', score: 1 }, 
+                    { text: '2ㄷ1 만들기', score: -1 }
                 ]
             }
         ] 
@@ -31,8 +31,8 @@ export const quizDimensions = [
             {
                 question: '친구가 장난을 걸어옵니다.<br>당신은 친구의 약점을 터트립니까, 들고 협박합니까?',
                 options: [
-                    { text: 'A: 친구의 약점 퍼트리기', score: 1 }, 
-                    { text: 'B: 친구의 약점 들고 협박하기', score: -1 }
+                    { text: '친구의 약점 퍼트리기', score: 1 }, 
+                    { text: '친구의 약점 들고 협박하기', score: -1 }
                 ]
             }
         ] 
@@ -44,8 +44,8 @@ export const quizDimensions = [
             {
                 question: '당신은 이세계에 떨어진 모험가입니다.<br>치명타 무기와 지속딜 무기 중 무엇을 선택할 것입니까?',
                 options: [
-                    { text: 'A: 치명타', score: 1 }, 
-                    { text: 'B: 지속딜', score: -1 }
+                    { text: '치명타', score: 1 }, 
+                    { text: '지속딜', score: -1 }
                 ]
             }
         ] 

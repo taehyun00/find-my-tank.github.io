@@ -1,12 +1,13 @@
 .home-screen {
-    width: 513px;
+    max-width: 513px;
+    width: 100%;
+    margin: 0 auto;
     height: 100vh;
-    padding: 210px 40px 130px 29px;
+    padding: 20vh 40px 12vh 29px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    gap: 306px;
     flex-shrink: 0;
 }
 
@@ -14,6 +15,10 @@
     color: var(--color-text);
     text-align: center;
     font-size: var(--font-size-heading-main);
+}
+
+.home-screen__title span {
+    display: block;
 }
 
 .home-screen__button {

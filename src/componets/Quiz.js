@@ -6,7 +6,7 @@ let userAnswers = [];
 
 export const render = () => {
     if (currentDimensionIndex >= quizDimensions.length) {
-        return `<div>결과를 계산 중입니다...</div>`; 
+        return ``; 
     }
 
     const currentDimension = quizDimensions[currentDimensionIndex];
