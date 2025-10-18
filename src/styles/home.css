@@ -1,0 +1,24 @@
+.home-screen {
+    width: 513px;
+    height: 100vh;
+    padding: 210px 40px 130px 29px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 306px;
+    flex-shrink: 0;
+}
+
+.home-screen__title {
+    color: var(--color-text);
+    text-align: center;
+    font-size: var(--font-size-heading-main);
+}
+
+.home-screen__button {
+    color: var(--color-text);
+    width: 444px;
+    font-size: var(--font-size-default);
+}
+

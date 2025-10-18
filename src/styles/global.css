@@ -55,4 +55,33 @@ a {
 button {
     cursor: pointer;
     border: none;
+    background-color: transparent; 
+    appearance: none;
+    -webkit-appearance: none; /* 크롬/사파리 대응 */
+    font: inherit; /* body에서 폰트 상속 */
+    color: inherit; /* body에서 텍스트 색상 상속 */
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(50%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+#app {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    flex-shrink: 0;
 }
