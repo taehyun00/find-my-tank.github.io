@@ -1,0 +1,6 @@
+{
+  "name": "find-my-tank",
+  "module": "index.js",
+  "type": "module",
+  "private": true
+}
