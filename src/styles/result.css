@@ -1,0 +1,230 @@
+/* Result Screen Styles */
+.result-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.result-card {
+  background: #000000;
+  padding: 40px 30px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.result-card__title {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 30px 0;
+  letter-spacing: -0.5px;
+}
+
+.result-card__tank {
+  margin-bottom: 30px;
+}
+
+.result-card__image-container {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.result-card__image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.result-card__image-placeholder {
+  color: #666;
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.result-card__name {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.result-card__description {
+  background: #111111;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 30px 0;
+  border: 1px solid #333;
+}
+
+.result-card__description p {
+  color: #cccccc;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  text-align: left;
+  word-break: keep-all;
+}
+
+.result-card__code {
+  margin: 20px 0 30px 0;
+}
+
+.result-card__code small {
+  color: #666;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.result-card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.result-screen__button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  width: 100%;
+}
+
+.result-screen__button--primary {
+  background: #ffd700;
+  color: #000000;
+}
+
+.result-screen__button--primary:hover {
+  background: #ffed4a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+}
+
+.result-screen__button--secondary {
+  background: transparent;
+  color: #ffd700;
+  border: 2px solid #ffd700;
+}
+
+.result-screen__button--secondary:hover {
+  background: #ffd700;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
+}
+
+.result-screen__button:active {
+  transform: translateY(0);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .result-screen {
+      padding: 15px;
+  }
+  
+  .result-card {
+      padding: 30px 20px;
+      border-radius: 15px;
+  }
+  
+  .result-card__title {
+      font-size: 20px;
+      margin-bottom: 25px;
+  }
+  
+  .result-card__name {
+      font-size: 24px;
+  }
+  
+  .result-card__image-container {
+      height: 160px;
+  }
+  
+  .result-card__description {
+      padding: 20px;
+      margin: 25px 0;
+  }
+  
+  .result-card__description p {
+      font-size: 15px;
+      line-height: 1.5;
+  }
+  
+  .result-screen__button {
+      padding: 12px 25px;
+      font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .result-card {
+      padding: 25px 15px;
+  }
+  
+  .result-card__title {
+      font-size: 18px;
+  }
+  
+  .result-card__name {
+      font-size: 22px;
+  }
+  
+  .result-card__image-container {
+      height: 140px;
+  }
+  
+  .result-card__description {
+      padding: 18px;
+  }
+  
+  .result-card__description p {
+      font-size: 14px;
+  }
+}
+
+/* 애니메이션 효과 */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.result-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.result-card__tank {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.result-card__description {
+  animation: fadeInUp 1s ease-out;
+}
+
+.result-card__actions {
+  animation: fadeInUp 1.2s ease-out;
+}

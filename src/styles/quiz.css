@@ -1,43 +1,107 @@
 .quiz-screen {
-    max-width: 513px;
-    width: 100%;
-    margin: 0 auto;
-    min-height: 100vh;
-    padding: 20vh 40px 12vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 120px;
+  max-width: 513px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 20vh 40px 12vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 120px;
 }
 
 .quiz-card__question {
-    color: var(--color-text);
-    text-align: center;
-    font-size: var(--font-size-default);
+  color: var(--color-text);
+  text-align: center;
+  font-size: var(--font-size-default);
 }
 
 .quiz-card__options {
-    display: flex;
-    flex-direction: column;
-    gap: 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
+
 }
 
 .quiz-option {
-    color: var(--color-text);
-    font-size: var(--font-size-answer);
-    text-align: center;
-    border: 1px solid var(--color-text);
-    width: 476px;
-    height: 99px;
+  color: var(--color-text);
+  font-size: var(--font-size-answer);
+  text-align: center;
+  border: 1px solid var(--color-text);
+  width: 476px;
+  height: 99px;
 }
 
 .quiz-screen__progress {
-    position: fixed;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: var(--font-size-sm);
-    color: var(--color-text);
-    z-index: 10;
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .quiz-screen {
+      max-width: 90%;
+      padding: 15vh 30px 10vh;
+      gap: 80px;
+  }
+  
+  .quiz-option {
+      width: 100%;
+      max-width: 400px;
+      height: 80px;
+  }
+  
+  .quiz-card__options {
+      gap: 40px;
+  }
+}
+
+/* 반응형 디자인 - 모바일 (480px 이하) */
+@media (max-width: 480px) {
+  .quiz-screen {
+      max-width: 95%;
+      padding: 12vh 20px 8vh;
+      gap: 60px;
+  }
+  
+  .quiz-option {
+      width: 100%;
+      max-width: 320px;
+      height: 70px;
+  }
+  
+  .quiz-card__options {
+      gap: 30px;
+  }
+  
+  .quiz-screen__progress {
+      bottom: 20px;
+  }
+}
+
+/* 반응형 디자인 - 작은 모바일 (360px 이하) */
+@media (max-width: 360px) {
+  .quiz-screen {
+      padding: 10vh 15px 6vh;
+      gap: 50px;
+  }
+  
+  .quiz-option {
+      width: 100%;
+      max-width: 280px;
+      height: 60px;
+  }
+  
+  .quiz-card__options {
+      gap: 25px;
+  }
+  
+  .quiz-screen__progress {
+      bottom: 16px;
+  }
 }

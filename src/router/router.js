@@ -1,7 +1,9 @@
 import * as Quiz from '../componets/Quiz.js';
+import * as Reslut from '../componets/Result.js';
 
 const routes = {
     '/quiz': Quiz,
+    '/result' : Reslut
 };
 
 const app = document.getElementById('app');
