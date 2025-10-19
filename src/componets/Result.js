@@ -1,41 +1,23 @@
 import { tankResults, quizDimensions } from "../data/data.js";
 
-// 모든 16개 이미지들을 import
-import ABOC from "../images/ABOC.png";
-import ABOG from "../images/ABOG.png";
-import ABTC from "../images/ABTC.png";
-import ABTG from "../images/ABTG.png";
-import AHOC from "../images/AHOC.png";
-import AHOG from "../images/AHOG.png";
-import AHTC from "../images/AHTC.png";
-import AHTG from "../images/AHTG.png";
-import DBOC from "../images/DBOC.png";
-import DBOG from "../images/DBOG.png";
-import DBTC from "../images/DBTC.png";
-import DBTG from "../images/DBTG.png";
-import DHOC from "../images/DHOC.png";
-import DHOG from "../images/DHOG.png";
-import DHTC from "../images/DHTC.png";
-import DHTG from "../images/DHTG.png";
-
-// 이미지 매핑 객체 (16개 모두)
+// 이미지 경로를 직접 문자열로 관리
 const tankImages = {
-  'ABOC': ABOC,
-  'ABOG': ABOG,
-  'ABTC': ABTC,
-  'ABTG': ABTG,
-  'AHOC': AHOC,
-  'AHOG': AHOG,
-  'AHTC': AHTC,
-  'AHTG': AHTG,
-  'DBOC': DBOC,
-  'DBOG': DBOG,
-  'DBTC': DBTC,
-  'DBTG': DBTG,
-  'DHOC': DHOC,
-  'DHOG': DHOG,
-  'DHTC': DHTC,
-  'DHTG': DHTG
+  'ABOC': 'src/images/ABOC.png',
+  'ABOG': 'src/images/ABOG.png',
+  'ABTC': 'src/images/ABTC.png',
+  'ABTG': 'src/images/ABTG.png',
+  'AHOC': 'src/images/AHOC.png',
+  'AHOG': 'src/images/AHOG.png',
+  'AHTC': 'src/images/AHTC.png',
+  'AHTG': 'src/images/AHTG.png',
+  'DBOC': 'src/images/DBOC.png',
+  'DBOG': 'src/images/DBOG.png',
+  'DBTC': 'src/images/DBTC.png',
+  'DBTG': 'src/images/DBTG.png',
+  'DHOC': 'src/images/DHOC.png',
+  'DHOG': 'src/images/DHOG.png',
+  'DHTC': 'src/images/DHTC.png',
+  'DHTG': 'src/images/DHTG.png'
 };
 
 // Quiz.js에서 전달받은 사용자 답변을 기반으로 결과 계산
