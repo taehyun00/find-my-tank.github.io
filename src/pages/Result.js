@@ -1,23 +1,23 @@
 import { tankResults, quizDimensions } from "../data/data.js";
 
-// 이미지 경로를 직접 문자열로 관리
+// 이미지 경로를 직접 문자열로 관리 (절대 경로로 수정)
 const tankImages = {
-  'ABOC': 'src/images/ABOC.png',
-  'ABOG': 'src/images/ABOG.png',
-  'ABTC': 'src/images/ABTC.png',
-  'ABTG': 'src/images/ABTG.png',
-  'AHOC': 'src/images/AHOC.png',
-  'AHOG': 'src/images/AHOG.png',
-  'AHTC': 'src/images/AHTC.png',
-  'AHTG': 'src/images/AHTG.png',
-  'DBOC': 'src/images/DBOC.png',
-  'DBOG': 'src/images/DBOG.png',
-  'DBTC': 'src/images/DBTC.png',
-  'DBTG': 'src/images/DBTG.png',
-  'DHOC': 'src/images/DHOC.png',
-  'DHOG': 'src/images/DHOG.png',
-  'DHTC': 'src/images/DHTC.png',
-  'DHTG': 'src/images/DHTG.png'
+  'ABOC': '/src/images/ABOC.png',
+  'ABOG': '/src/images/ABOG.png',
+  'ABTC': '/src/images/ABTC.png',
+  'ABTG': '/src/images/ABTG.png',
+  'AHOC': '/src/images/AHOC.png',
+  'AHOG': '/src/images/AHOG.png',
+  'AHTC': '/src/images/AHTC.png',
+  'AHTG': '/src/images/AHTG.png',
+  'DBOC': '/src/images/DBOC.png',
+  'DBOG': '/src/images/DBOG.png',
+  'DBTC': '/src/images/DBTC.png',
+  'DBTG': '/src/images/DBTG.png',
+  'DHOC': '/src/images/DHOC.png',
+  'DHOG': '/src/images/DHOG.png',
+  'DHTC': '/src/images/DHTC.png',
+  'DHTG': '/src/images/DHTG.png'
 };
 
 // Quiz.js에서 전달받은 사용자 답변을 기반으로 결과 계산

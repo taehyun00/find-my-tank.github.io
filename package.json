@@ -2,5 +2,9 @@
   "name": "find-my-tank",
   "module": "index.js",
   "type": "module",
-  "private": true
+  "private": true,
+  "scripts": {
+    "start": "bun run server.ts",
+    "dev": "bun --hot server.ts"
+  }
 }
