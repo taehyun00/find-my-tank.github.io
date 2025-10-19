@@ -1,4 +1,5 @@
 import { quizDimensions } from "../data/data.js";
+import { track } from '@vercel/analytics'; // 🔥 추가
 
 let currentDimensionIndex = 0;
 let currentQuestionIndex = 0; 
@@ -60,6 +61,13 @@ export const attachEvents = () => {
           const score = parseInt(button.dataset.score);
           userAnswers.push({ dimensionId, score });
 
+          // 🔥 답변 이벤트 추적
+          track('quiz_answer', { 
+              dimension: dimensionId, 
+              question: currentDimensionIndex + 1,
+              score: score
+          });
+
           currentDimensionIndex++;
           
           // 다음 질문이 있으면 계속, 없으면 결과 페이지로
@@ -70,6 +78,11 @@ export const attachEvents = () => {
               
               // localStorage에 결과 저장
               localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
+              
+              // 🔥 퀴즈 완료 이벤트 추적
+              track('quiz_completed', {
+                  total_questions: quizDimensions.length
+              });
               
               // 결과 페이지로 이동
               window.navigateTo('/result'); 

@@ -1,4 +1,8 @@
 import { router, navigateTo, renderCurrentRoute } from './src/router/router.js';
+import { inject, track } from '@vercel/analytics'; // 🔥 추가
+
+// 🔥 Analytics 초기화
+inject();
 
 window.navigateTo = navigateTo; 
 window.renderCurrentRoute = renderCurrentRoute;
@@ -17,6 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (startButton) {
         startButton.addEventListener('click', (e) => {
             e.preventDefault(); // 기본 동작 방지
+            
+            // 🔥 시작 버튼 클릭 이벤트 추적
+            track('start_quiz');
+            
             navigateTo('/quiz'); 
         });
     }

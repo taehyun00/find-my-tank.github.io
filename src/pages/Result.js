@@ -1,4 +1,5 @@
 import { tankResults, quizDimensions } from "../data/data.js";
+import { track } from '@vercel/analytics'; // 🔥 추가
 
 // 이미지 경로를 직접 문자열로 관리 (절대 경로로 수정)
 const tankImages = {
@@ -105,6 +106,12 @@ export const render = () => {
   const resultCode = calculateResult();
   const tank = tankResults[resultCode];
   
+  // 🔥 결과 조회 이벤트 추적
+  track('view_result', {
+      result_code: resultCode,
+      tank_name: tank?.name || 'Unknown'
+  });
+  
   // 🔥 카카오 SDK 초기화
   setTimeout(() => initKakao(), 100);
   
@@ -177,6 +184,12 @@ export const attachEvents = () => {
   if (retryButton) {
       retryButton.addEventListener('click', (e) => {
           e.preventDefault();
+          
+          // 🔥 재시작 이벤트 추적
+          track('retry_quiz', {
+              from_result: calculateResult()
+          });
+          
           // localStorage 초기화
           localStorage.removeItem('userAnswers');
           // Quiz.js의 상태도 초기화 (전역 변수가 있다면)
@@ -200,6 +213,12 @@ export const attachEvents = () => {
               return;
           }
           
+          // 🔥 카카오톡 공유 이벤트 추적
+          track('kakao_share', {
+              result_code: resultCode,
+              tank_name: tankResults[resultCode]?.name || 'Unknown'
+          });
+          
           shareKakao(resultCode);
       });
   }
@@ -214,6 +233,12 @@ export const attachEvents = () => {
           if (!tank) return;
           
           const shareText = `🚗 나의 전차는 ${tank.name}!\n\n${tank.description}\n\n당신도 테스트해보세요! ${window.location.origin}`;
+          
+          // 🔥 일반 공유 이벤트 추적
+          track('web_share', {
+              result_code: resultCode,
+              tank_name: tank.name
+          });
           
           if (navigator.share) {
               // Web Share API 지원하는 경우
