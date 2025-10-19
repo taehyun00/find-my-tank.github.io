@@ -40,8 +40,8 @@ const shareKakao = (resultCode) => {
   window.Kakao.Link.sendDefault({
     objectType: 'feed',
     content: {
-      title: `나의 전차는 ${tank.name}!`,
-      description: tank.description,
+      title: `반갑다 나 ${tank.name}인데... \n 니 탱크는 안궁금하냐`,
+      description: "2차 세계대전에 펜타킬 함께한 탱크 알아보기",
       imageUrl: imageURL,
       link: {
         mobileWebUrl: currentURL,
@@ -50,7 +50,7 @@ const shareKakao = (resultCode) => {
     },
     buttons: [
       {
-        title: '나도 테스트하기',
+        title: '검사하러가기',
         link: {
           mobileWebUrl: currentURL,
           webUrl: currentURL,
@@ -160,13 +160,7 @@ export const render = () => {
                       다시 테스트하기
                   </button>
                   <button id="kakaoShareButton" class="result-screen__button result-screen__button--kakao">
-                      <img src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" 
-                           alt="카카오톡 공유하기" 
-                           style="width: 40px; height: 40px; vertical-align: middle;" />
                       카카오톡 공유하기
-                  </button>
-                  <button id="shareButton" class="result-screen__button result-screen__button--secondary">
-                      결과 공유하기
                   </button>
               </div>
           </div>
