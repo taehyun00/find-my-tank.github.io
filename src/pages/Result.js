@@ -20,6 +20,47 @@ const tankImages = {
   'DHTG': '/src/images/DHTG.png'
 };
 
+// 🔥 카카오 SDK 초기화
+const initKakao = () => {
+  if (window.Kakao && !window.Kakao.isInitialized()) {
+    window.Kakao.init('6ff01bbe44a68cffc1a733ee16f5924a'); // 🔑 발급받은 키 입력
+    console.log('카카오 SDK 초기화 완료:', window.Kakao.isInitialized());
+  }
+};
+
+// 🔥 카카오톡 공유하기 함수
+const shareKakao = (resultCode) => {
+  const tank = tankResults[resultCode];
+  const tankImage = tankImages[resultCode];
+  const currentURL = window.location.origin;
+
+  // 절대 경로로 이미지 URL 생성
+  const imageURL = window.location.origin + tankImage;
+
+  window.Kakao.Link.sendDefault({
+    objectType: 'feed',
+    content: {
+      title: `나의 전차는 ${tank.name}!`,
+      description: tank.description,
+      imageUrl: imageURL,
+      link: {
+        mobileWebUrl: currentURL,
+        webUrl: currentURL,
+      },
+    },
+    buttons: [
+      {
+        title: '나도 테스트하기',
+        link: {
+          mobileWebUrl: currentURL,
+          webUrl: currentURL,
+        },
+      },
+    ],
+    installTalk: true, // 카카오톡 미설치 시 설치 유도
+  });
+};
+
 // Quiz.js에서 전달받은 사용자 답변을 기반으로 결과 계산
 const calculateResult = () => {
   const userAnswers = JSON.parse(localStorage.getItem('userAnswers') || '[]');
@@ -64,6 +105,9 @@ export const render = () => {
   const resultCode = calculateResult();
   const tank = tankResults[resultCode];
   
+  // 🔥 카카오 SDK 초기화
+  setTimeout(() => initKakao(), 100);
+  
   if (!tank) {
       return `
           <section class="result-screen">
@@ -82,7 +126,9 @@ export const render = () => {
   const tankImage = tankImages[resultCode];
   
   return `
+  
       <section class="result-screen">
+      
           <div class="result-card">
               <h2 class="result-card__title">당신의 전차는...</h2>
               
@@ -113,6 +159,12 @@ export const render = () => {
                   <button id="retryButton" class="result-screen__button result-screen__button--primary">
                       다시 테스트하기
                   </button>
+                  <button id="kakaoShareButton" class="result-screen__button result-screen__button--kakao">
+                      <img src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" 
+                           alt="카카오톡 공유하기" 
+                           style="width: 40px; height: 40px; vertical-align: middle;" />
+                      카카오톡 공유하기
+                  </button>
                   <button id="shareButton" class="result-screen__button result-screen__button--secondary">
                       결과 공유하기
                   </button>
@@ -125,7 +177,9 @@ export const render = () => {
 export const attachEvents = () => {
   const retryButton = document.getElementById('retryButton');
   const shareButton = document.getElementById('shareButton');
+  const kakaoShareButton = document.getElementById('kakaoShareButton'); // 🔥 카카오 공유 버튼
   
+  // 다시 테스트하기 버튼
   if (retryButton) {
       retryButton.addEventListener('click', (e) => {
           e.preventDefault();
@@ -140,6 +194,23 @@ export const attachEvents = () => {
       });
   }
   
+  // 🔥 카카오톡 공유하기 버튼
+  if (kakaoShareButton) {
+      kakaoShareButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          const resultCode = calculateResult();
+          
+          if (!window.Kakao || !window.Kakao.isInitialized()) {
+              alert('카카오톡 공유 기능을 불러오는 중입니다. 잠시 후 다시 시도해주세요.');
+              initKakao();
+              return;
+          }
+          
+          shareKakao(resultCode);
+      });
+  }
+  
+  // 일반 공유하기 버튼
   if (shareButton) {
       shareButton.addEventListener('click', (e) => {
           e.preventDefault();
