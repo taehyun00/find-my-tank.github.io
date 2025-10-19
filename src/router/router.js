@@ -1,9 +1,9 @@
 import * as Quiz from '../pages/Quiz.js';
-import * as Result from '../pages/Result.js'; // 🔥 오타 수정 (Reslut → Result)
+import * as Reslut from '../pages/Result.js';
 
 const routes = {
     '/quiz': Quiz,
-    '/result': Result
+    '/result' : Reslut
 };
 
 const app = document.getElementById('app');
