@@ -1,5 +1,4 @@
 import { quizDimensions } from "../data/data.js";
-import { Analytics } from '@vercel/analytics/react';
 
 let currentDimensionIndex = 0;
 let currentQuestionIndex = 0; 
@@ -45,7 +44,6 @@ export const render = () => {
               ${currentDimensionIndex + 1} / ${quizDimensions.length}
               <span class="sr-only">번째 질문입니다.</span>
           </p>
-          <Analytics />
       </section>
   `;
 };
