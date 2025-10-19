@@ -1,5 +1,5 @@
-import * as Quiz from '../componets/Quiz.js';
-import * as Reslut from '../componets/Result.js';
+import * as Quiz from '../pages/Quiz.js';
+import * as Reslut from '../pages/Result.js';
 
 const routes = {
     '/quiz': Quiz,
