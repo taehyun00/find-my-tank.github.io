@@ -156,9 +156,6 @@ export const render = () => {
               </div>
               
               <div class="result-card__actions">
-                  <button id="retryButton" class="result-screen__button result-screen__button--primary">
-                      다시 테스트하기
-                  </button>
                   <button id="kakaoShareButton" class="result-screen__button result-screen__button--kakao">
                       카카오톡 공유하기
                   </button>
