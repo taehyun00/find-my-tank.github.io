@@ -1,5 +1,5 @@
 import { tankResults, quizDimensions } from "../data/data.js";
-
+const KAKAO_API_KEY = import.meta.env.VITE_KAKAO_API_KEY;
 // 이미지 경로를 직접 문자열로 관리 (절대 경로로 수정)
 const tankImages = {
   'ABOC': '/src/images/ABOC.png',
@@ -23,7 +23,7 @@ const tankImages = {
 // 🔥 카카오 SDK 초기화
 const initKakao = () => {
   if (window.Kakao && !window.Kakao.isInitialized()) {
-    window.Kakao.init('6ff01bbe44a68cffc1a733ee16f5924a'); // 🔑 발급받은 키 입력
+    window.Kakao.init(KAKAO_API_KEY); // 🔑 발급받은 키 입력
     console.log('카카오 SDK 초기화 완료:', window.Kakao.isInitialized());
   }
 };
